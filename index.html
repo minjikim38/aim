@@ -3,179 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIM Report — Audience Intelligence Metrics Report</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://chir.ag/projects/wordcloud/wordcloud2.js"></script>
+    <title>AIM Report — Modern Intelligence</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <header class="header">
             <div class="header-content">
-                <h1 class="brand-title">AIM Report</h1>
-                <p class="brand-subtitle">Audience Intelligence Metrics Report</p>
+                <h1>AIM Report</h1>
+                <p>Audience Intelligence Metrics & Strategic Analysis</p>
             </div>
             <div class="header-controls">
-                <label class="checkbox-label">
-                    <input type="checkbox" id="includeCreative"> 소재 분석
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" id="includeCampaign"> 캠페인 성과
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" id="includeCompetitor"> 경쟁사 분석
-                </label>
+                <label class="checkbox-label"><input type="checkbox" id="includeCreative"> 소재 분석</label>
+                <label class="checkbox-label"><input type="checkbox" id="includeCampaign"> 캠페인 성과</label>
+                <label class="checkbox-label"><input type="checkbox" id="includeCompetitor"> 경쟁사 분석</label>
                 <button id="generateReport" class="btn-primary">리포트 생성</button>
             </div>
         </header>
 
-        <!-- Report Content -->
         <main class="report-content">
-            <!-- Section 1: AIM Score Summary -->
-            <section class="section" id="scoreSection">
+            <section class="section">
                 <h2 class="section-title">AIM 점수 요약</h2>
                 <div class="score-summary" id="scoreSummary">
-                    <div class="funnel-score-card">
-                        <h3>인지</h3>
-                        <div class="score-value">-</div>
-                        <p class="score-label">Awareness</p>
                     </div>
-                    <div class="funnel-score-card">
-                        <h3>탐색</h3>
-                        <div class="score-value">-</div>
-                        <p class="score-label">Exploration</p>
-                    </div>
-                    <div class="funnel-score-card">
-                        <h3>의도</h3>
-                        <div class="score-value">-</div>
-                        <p class="score-label">Intention</p>
-                    </div>
-                    <div class="funnel-score-card">
-                        <h3>유입</h3>
-                        <div class="score-value">-</div>
-                        <p class="score-label">Traffic</p>
-                    </div>
-                    <div class="funnel-score-card">
-                        <h3>확산</h3>
-                        <div class="score-value">-</div>
-                        <p class="score-label">Spread</p>
-                    </div>
-                </div>
             </section>
 
-            <!-- Section 2: Monthly AIM Score Chart -->
-            <section class="section">
-                <h2 class="section-title">월별 AIM 점수</h2>
-                <div class="chart-container">
-                    <canvas id="monthlyChart"></canvas>
-                </div>
-                <div id="issuePopup" class="issue-popup" style="display: none;">
-                    <button class="close-btn">&times;</button>
-                    <div id="issueContent"></div>
-                </div>
-            </section>
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <section class="section">
+                    <h2 class="section-title">월별 종합 AIM 추이</h2>
+                    <div class="chart-container"><canvas id="monthlyChart"></canvas></div>
+                </section>
+                <section class="section">
+                    <h2 class="section-title">퍼널별 성과 분포</h2>
+                    <div class="chart-container"><canvas id="funnelComparisonChart"></canvas></div>
+                </section>
+            </div>
 
-            <!-- Section 3: Funnel by Month -->
             <section class="section">
-                <h2 class="section-title">마케팅 퍼널별 월별 점수</h2>
-                <div class="funnel-chart-container">
-                    <div class="funnel-table-wrapper">
-                        <table id="funnelTable" class="funnel-table">
-                            <thead>
-                                <tr>
-                                    <th>월</th>
-                                    <th>인지</th>
-                                    <th>탐색</th>
-                                    <th>의도</th>
-                                    <th>유입</th>
-                                    <th>확산</th>
-                                </tr>
-                            </thead>
-                            <tbody id="funnelTableBody">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 4: Keyword Cloud by Funnel -->
-            <section class="section">
-                <h2 class="section-title">퍼널별 키워드 클라우드</h2>
+                <h2 class="section-title">퍼널별 핵심 키워드 클라우드</h2>
                 <div class="keyword-clouds">
-                    <div class="keyword-cloud-item">
-                        <h3>인지</h3>
-                        <canvas id="cloud-awareness"></canvas>
                     </div>
-                    <div class="keyword-cloud-item">
-                        <h3>탐색</h3>
-                        <canvas id="cloud-exploration"></canvas>
-                    </div>
-                    <div class="keyword-cloud-item">
-                        <h3>의도</h3>
-                        <canvas id="cloud-intention"></canvas>
-                    </div>
-                    <div class="keyword-cloud-item">
-                        <h3>유입</h3>
-                        <canvas id="cloud-traffic"></canvas>
-                    </div>
-                    <div class="keyword-cloud-item">
-                        <h3>확산</h3>
-                        <canvas id="cloud-spread"></canvas>
-                    </div>
-                </div>
             </section>
 
-            <!-- Section 5: Creative Analysis (Conditional) -->
-            <section class="section" id="creativeSection" style="display: none;">
-                <h2 class="section-title">소재별 성과 분석</h2>
-                <div id="creativeAnalysis"></div>
-            </section>
+            <div id="extendedSections">
+                <section class="section" id="creativeSection" style="display: none;"><h2 class="section-title">소재 성과</h2><div id="creativeAnalysis"></div></section>
+                <section class="section" id="campaignSection" style="display: none;"><h2 class="section-title">캠페인 성과</h2><div id="campaignAnalysis"></div></section>
+                <section class="section" id="competitorSection" style="display: none;"><h2 class="section-title">경쟁사 분석</h2><div id="competitorAnalysis"></div></section>
+            </div>
 
-            <!-- Section 6: Campaign Performance (Conditional) -->
-            <section class="section" id="campaignSection" style="display: none;">
-                <h2 class="section-title">캠페인 성과 분석</h2>
-                <div id="campaignAnalysis"></div>
-            </section>
-
-            <!-- Section 7: Competitor Analysis (Conditional) -->
-            <section class="section" id="competitorSection" style="display: none;">
-                <h2 class="section-title">경쟁사 분석</h2>
-                <div id="competitorAnalysis"></div>
-            </section>
-
-            <!-- Section 8: AI Insights -->
-            <section class="section">
-                <h2 class="section-title">AI 인사이트</h2>
-                <div id="insights" class="insights-container">
-                    <div class="loading">분석 중...</div>
-                </div>
-            </section>
-
-            <!-- Section 9: Action Plan -->
-            <section class="section">
-                <h2 class="section-title">다음 실행 전략</h2>
-                <div id="actionPlan" class="action-plan-container">
-                    <div class="loading">전략 수립 중...</div>
-                </div>
-            </section>
+            <div class="insights-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <section class="section"><h2 class="section-title">AI 인사이트</h2><div id="insights"></div></section>
+                <section class="section"><h2 class="section-title">Next Step 전략</h2><div id="actionPlan"></div></section>
+            </div>
         </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>AIM Report © 2024 — Internal Use Only</p>
-            <p>광고주·대행사·렙사 내부 보고용</p>
-        </footer>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/chart.js" defer></script>
-    <script src="assets/js/funnel.js" defer></script>
-    <script src="assets/js/insight.js" defer></script>
-    <script src="assets/js/creative.js" defer></script>
-    <script src="assets/js/campaign.js" defer></script>
-    <script src="assets/js/competitor.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="https://chir.ag/projects/wordcloud/wordcloud2.js"></script>
+    <script src="./assets/js/chart.js" defer></script>
+    <script src="./assets/js/funnel.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
 </body>
 </html>
