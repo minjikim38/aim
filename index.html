@@ -25,7 +25,32 @@
             <section class="section">
                 <h2 class="section-title">AIM 점수 요약</h2>
                 <div class="score-summary" id="scoreSummary">
+                    <div class="funnel-score-card">
+                        <h3>인지</h3>
+                        <div class="score-value">-</div>
+                        <div class="score-label">점수</div>
                     </div>
+                    <div class="funnel-score-card">
+                        <h3>탐색</h3>
+                        <div class="score-value">-</div>
+                        <div class="score-label">점수</div>
+                    </div>
+                    <div class="funnel-score-card">
+                        <h3>의도</h3>
+                        <div class="score-value">-</div>
+                        <div class="score-label">점수</div>
+                    </div>
+                    <div class="funnel-score-card">
+                        <h3>유입</h3>
+                        <div class="score-value">-</div>
+                        <div class="score-label">점수</div>
+                    </div>
+                    <div class="funnel-score-card">
+                        <h3>확산</h3>
+                        <div class="score-value">-</div>
+                        <div class="score-label">점수</div>
+                    </div>
+                </div>
             </section>
 
             <div class="dashboard-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
@@ -35,14 +60,50 @@
                 </section>
                 <section class="section">
                     <h2 class="section-title">퍼널별 성과 분포</h2>
-                    <div class="chart-container"><canvas id="funnelComparisonChart"></canvas></div>
+                    <div class="funnel-table-wrapper">
+                        <table class="funnel-table">
+                            <thead>
+                                <tr>
+                                    <th>월</th>
+                                    <th>인지</th>
+                                    <th>탐색</th>
+                                    <th>의도</th>
+                                    <th>유입</th>
+                                    <th>확산</th>
+                                </tr>
+                            </thead>
+                            <tbody id="funnelTableBody">
+                                <!-- 동적 생성 -->
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
             </div>
 
             <section class="section">
                 <h2 class="section-title">퍼널별 핵심 키워드 클라우드</h2>
                 <div class="keyword-clouds">
+                    <div class="keyword-cloud-item">
+                        <h3>인지 (Awareness)</h3>
+                        <canvas id="cloud-awareness"></canvas>
                     </div>
+                    <div class="keyword-cloud-item">
+                        <h3>탐색 (Exploration)</h3>
+                        <canvas id="cloud-exploration"></canvas>
+                    </div>
+                    <div class="keyword-cloud-item">
+                        <h3>의도 (Intention)</h3>
+                        <canvas id="cloud-intention"></canvas>
+                    </div>
+                    <div class="keyword-cloud-item">
+                        <h3>유입 (Traffic)</h3>
+                        <canvas id="cloud-traffic"></canvas>
+                    </div>
+                    <div class="keyword-cloud-item">
+                        <h3>확산 (Spread)</h3>
+                        <canvas id="cloud-spread"></canvas>
+                    </div>
+                </div>
             </section>
 
             <div id="extendedSections">
@@ -56,6 +117,12 @@
                 <section class="section"><h2 class="section-title">Next Step 전략</h2><div id="actionPlan"></div></section>
             </div>
         </main>
+    </div>
+
+    <!-- Issue Popup -->
+    <div id="issuePopup" class="issue-popup" style="display: none;">
+        <button class="close-btn">×</button>
+        <div id="issueContent"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>

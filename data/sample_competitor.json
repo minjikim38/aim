@@ -1,49 +1,25 @@
 {
   "competitors": [
     {
-      "brand": "브랜드B",
-      "keywords": [
-        { "keyword": "브랜드B", "funnel": "인지", "month": "2024-01", "search_volume": 38000, "aim_score": 65.4 },
-        { "keyword": "브랜드B 리뷰", "funnel": "탐색", "month": "2024-01", "search_volume": 18000, "aim_score": 68.2 },
-        { "keyword": "브랜드B 가격", "funnel": "의도", "month": "2024-01", "search_volume": 11000, "aim_score": 72.1 },
-        { "keyword": "브랜드B 공식몰", "funnel": "유입", "month": "2024-01", "search_volume": 5500, "aim_score": 79.3 },
-        { "keyword": "브랜드B 후기", "funnel": "확산", "month": "2024-01", "search_volume": 13000, "aim_score": 63.7 },
-        { "keyword": "브랜드B", "funnel": "인지", "month": "2024-02", "search_volume": 40000, "aim_score": 67.8 },
-        { "keyword": "브랜드B 리뷰", "funnel": "탐색", "month": "2024-02", "search_volume": 19500, "aim_score": 70.1 },
-        { "keyword": "브랜드B 가격", "funnel": "의도", "month": "2024-02", "search_volume": 12500, "aim_score": 74.6 },
-        { "keyword": "브랜드B 공식몰", "funnel": "유입", "month": "2024-02", "search_volume": 6200, "aim_score": 81.2 },
-        { "keyword": "브랜드B 후기", "funnel": "확산", "month": "2024-02", "search_volume": 14500, "aim_score": 66.3 },
-        { "keyword": "브랜드B", "funnel": "인지", "month": "2024-03", "search_volume": 55000, "aim_score": 81.2 },
-        { "keyword": "브랜드B 리뷰", "funnel": "탐색", "month": "2024-03", "search_volume": 29000, "aim_score": 79.4 },
-        { "keyword": "브랜드B 가격", "funnel": "의도", "month": "2024-03", "search_volume": 18000, "aim_score": 83.7 },
-        { "keyword": "브랜드B 공식몰", "funnel": "유입", "month": "2024-03", "search_volume": 11000, "aim_score": 88.9 },
-        { "keyword": "브랜드B 후기", "funnel": "확산", "month": "2024-03", "search_volume": 26000, "aim_score": 78.5 },
-        { "keyword": "브랜드B", "funnel": "인지", "month": "2024-11", "search_volume": 82000, "aim_score": 94.3 },
-        { "keyword": "브랜드B 리뷰", "funnel": "탐색", "month": "2024-11", "search_volume": 48000, "aim_score": 91.8 },
-        { "keyword": "브랜드B 할인", "funnel": "의도", "month": "2024-11", "search_volume": 42000, "aim_score": 95.6 },
-        { "keyword": "브랜드B 공식몰", "funnel": "유입", "month": "2024-11", "search_volume": 25000, "aim_score": 97.1 },
-        { "keyword": "브랜드B 후기", "funnel": "확산", "month": "2024-11", "search_volume": 41000, "aim_score": 90.2 }
-      ]
+      "name": "경쟁사 A",
+      "market_share": 25,
+      "aim_score": 72,
+      "campaigns_count": 8,
+      "content_quality": 7.5
     },
     {
-      "brand": "브랜드C",
-      "keywords": [
-        { "keyword": "브랜드C", "funnel": "인지", "month": "2024-01", "search_volume": 28000, "aim_score": 58.3 },
-        { "keyword": "브랜드C 리뷰", "funnel": "탐색", "month": "2024-01", "search_volume": 12000, "aim_score": 61.7 },
-        { "keyword": "브랜드C 가격", "funnel": "의도", "month": "2024-01", "search_volume": 8500, "aim_score": 65.4 },
-        { "keyword": "브랜드C 공식몰", "funnel": "유입", "month": "2024-01", "search_volume": 3800, "aim_score": 72.8 },
-        { "keyword": "브랜드C 후기", "funnel": "확산", "month": "2024-01", "search_volume": 9500, "aim_score": 57.1 },
-        { "keyword": "브랜드C", "funnel": "인지", "month": "2024-03", "search_volume": 42000, "aim_score": 74.6 },
-        { "keyword": "브랜드C 리뷰", "funnel": "탐색", "month": "2024-03", "search_volume": 21000, "aim_score": 72.3 },
-        { "keyword": "브랜드C 가격", "funnel": "의도", "month": "2024-03", "search_volume": 14000, "aim_score": 78.9 },
-        { "keyword": "브랜드C 공식몰", "funnel": "유입", "month": "2024-03", "search_volume": 8000, "aim_score": 84.2 },
-        { "keyword": "브랜드C 후기", "funnel": "확산", "month": "2024-03", "search_volume": 19000, "aim_score": 71.4 },
-        { "keyword": "브랜드C", "funnel": "인지", "month": "2024-11", "search_volume": 61000, "aim_score": 88.7 },
-        { "keyword": "브랜드C 리뷰", "funnel": "탐색", "month": "2024-11", "search_volume": 35000, "aim_score": 85.9 },
-        { "keyword": "브랜드C 할인", "funnel": "의도", "month": "2024-11", "search_volume": 31000, "aim_score": 91.2 },
-        { "keyword": "브랜드C 공식몰", "funnel": "유입", "month": "2024-11", "search_volume": 18000, "aim_score": 93.5 },
-        { "keyword": "브랜드C 후기", "funnel": "확산", "month": "2024-11", "search_volume": 29000, "aim_score": 84.6 }
-      ]
+      "name": "경쟁사 B",
+      "market_share": 22,
+      "aim_score": 68,
+      "campaigns_count": 6,
+      "content_quality": 7.0
+    },
+    {
+      "name": "우리 회사",
+      "market_share": 35,
+      "aim_score": 85,
+      "campaigns_count": 12,
+      "content_quality": 8.8
     }
   ]
 }
