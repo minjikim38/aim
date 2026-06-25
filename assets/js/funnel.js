@@ -1,4 +1,4 @@
-// Funnel.js - Funnel Analysis and Keyword Clouds
+// Funnel.js - 세련된 퍼널 분석 및 워드클라우드
 
 function generateScoreSummary() {
     const scores = getAverageScoreByFunnel();
@@ -6,7 +6,7 @@ function generateScoreSummary() {
     
     cards.forEach((card, index) => {
         const funnelNames = ['인지', '탐색', '의도', '유입', '확산'];
-        const score = scores[funnelNames[index]];
+        const score = scores[funnelNames[index]] || 0;
         card.querySelector('.score-value').textContent = parseFloat(score).toFixed(1);
     });
 }
@@ -20,7 +20,7 @@ function generateFunnelTable() {
 
     months.forEach(month => {
         const row = document.createElement('tr');
-        row.innerHTML = `<td><strong>${getMonthLabel(month)}</strong></td>`;
+        row.innerHTML = `<td style="font-weight: 600; color: #475569;">${getMonthLabel(month)}</td>`;
 
         funnels.forEach(funnel => {
             const filtered = globalData.keywords.keywords.filter(k => k.month === month && k.funnel === funnel);
@@ -28,116 +28,46 @@ function generateFunnelTable() {
                 ? (filtered.reduce((sum, k) => sum + k.aim_score, 0) / filtered.length).toFixed(1)
                 : 0;
             
-            const cellClass = avg >= 80 ? 'score-high' : avg >= 60 ? 'score-mid' : 'score-low';
-            row.innerHTML += `<td class="${cellClass}">${avg}</td>`;
+            // 색상 등급별 처리를 CSS 클래스 대신 스타일로 더 세련되게 적용
+            let bgColor = 'transparent';
+            if (avg >= 80) bgColor = '#dcfce7'; // 세련된 연한 그린
+            else if (avg >= 60) bgColor = '#fef9c3'; // 세련된 연한 옐로우
+            else if (avg > 0) bgColor = '#fee2e2'; // 세련된 연한 레드
+            
+            row.innerHTML += `<td style="background-color: ${bgColor}; border-radius: 6px;">${avg}</td>`;
         });
-
         tbody.appendChild(row);
     });
-
-    // Add CSS classes if not already in style.css
-    addFunnelTableStyles();
-}
-
-function addFunnelTableStyles() {
-    if (!document.getElementById('funnelTableStyles')) {
-        const style = document.createElement('style');
-        style.id = 'funnelTableStyles';
-        style.textContent = `
-            .score-high {
-                background-color: #c8e6c9 !important;
-                color: #1b5e20;
-                font-weight: 600;
-            }
-            .score-mid {
-                background-color: #fff9c4 !important;
-                color: #f57f17;
-                font-weight: 600;
-            }
-            .score-low {
-                background-color: #ffccbc !important;
-                color: #bf360c;
-                font-weight: 600;
-            }
-        `;
-        document.head.appendChild(style);
-    }
 }
 
 function generateKeywordClouds() {
     const funnels = ['인지', '탐색', '의도', '유입', '확산'];
     const cloudIds = ['awareness', 'exploration', 'intention', 'traffic', 'spread'];
-    const colors = ['#64b5f6', '#81c784', '#ffb74d', '#e57373', '#ba68c8'];
+    
+    // 세련된 파스텔톤 컬러 팔레트
+    const colors = ['#6366f1', '#3b82f6', '#10b981', '#f59e0b', '#ec4899'];
 
     funnels.forEach((funnel, index) => {
         const canvasId = `cloud-${cloudIds[index]}`;
-        const canvas = document.getElementById(canvasId);
-        
-        if (!canvas) return;
-
         const keywords = getKeywordsByFunnel(funnel);
         
-        // Use WordCloud2.js if available, otherwise fallback to simple list
-        if (window.WordCloud) {
-            generateWordCloud(canvasId, keywords, colors[index]);
-        } else {
-            generateKeywordList(canvasId, keywords, colors[index]);
-        }
-    });
-}
+        if (keywords.length === 0) return;
 
-function generateWordCloud(canvasId, keywords, color) {
-    const canvas = document.getElementById(canvasId);
-    const ctx = canvas.getContext('2d');
-    
-    // Simple word cloud visualization
-    const size = 100;
-    const maxSize = 40;
-    const minSize = 10;
-    
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = `${minSize}px Pretendard`;
-    ctx.fillStyle = color;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-
-    const itemsToShow = Math.min(10, keywords.length);
-    keywords.slice(0, itemsToShow).forEach((keyword, index) => {
-        const fontSize = minSize + (keyword.weight / 100) * (maxSize - minSize);
-        ctx.font = `bold ${fontSize}px Pretendard`;
-        ctx.fillStyle = color;
-        
-        const x = (index % 2 === 0) ? canvas.width * 0.3 : canvas.width * 0.7;
-        const y = (index * 30) % canvas.height + 50;
-        
-        ctx.fillText(keyword.text, x, y);
-    });
-}
-
-function generateKeywordList(canvasId, keywords, color) {
-    const canvas = document.getElementById(canvasId);
-    const ctx = canvas.getContext('2d');
-    
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = '13px Pretendard';
-    ctx.fillStyle = '#333';
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'top';
-
-    const itemsToShow = Math.min(8, keywords.length);
-    keywords.slice(0, itemsToShow).forEach((keyword, index) => {
-        const y = 20 + index * 25;
-        
-        // Draw background
-        ctx.fillStyle = color + '20';
-        ctx.fillRect(10, y - 5, canvas.width - 20, 20);
-        
-        // Draw text
-        ctx.fillStyle = '#212121';
-        ctx.fillText(keyword.text, 15, y);
-        
-        // Draw weight indicator
-        ctx.fillStyle = color;
-        ctx.fillRect(canvas.width - 50, y, keyword.weight / 2, 8);
+        // WordCloud2.js 적용
+        WordCloud(document.getElementById(canvasId), {
+            list: keywords.map(k => [k.text, k.weight]),
+            fontFamily: 'Paperlogy, sans-serif',
+            color: colors[index],
+            weightFactor: 0.8,
+            gridSize: 10,
+            rotationSteps: 2,
+            rotateRatio: 0.2,
+            backgroundColor: 'transparent',
+            shuffle: true,
+            minRotation: -Math.PI / 8,
+            maxRotation: Math.PI / 8,
+            shape: 'circle',
+            ellipticity: 0.65
+        });
     });
 }
