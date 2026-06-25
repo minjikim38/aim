@@ -1,0 +1,722 @@
+/* Paperlogy Font Import */
+@font-face {
+    font-family: 'Paperlogy';
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Paperlogy';
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Paperlogy';
+    font-weight: 600;
+    font-display: swap;
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Paperlogy';
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+}
+
+:root {
+    /* Modern & Sophisticated Color Palette */
+    --primary-color: #27272A;    /* 무게감 있는 징크(Zinc) 그레이 */
+    --primary-dark: #09090B;     /* 거의 블랙에 가까운 딥 다크 */
+    --secondary-color: #14B8A6;  /* 세련된 틸(Teal) 민트 포인트 */
+    --accent-color: #8B5CF6;     /* 화사한 바이올렛 포인트 */
+    --warning-color: #EF4444;    /* 명확한 레드 */
+    
+    --text-dark: #0F172A;        /* 슬레이트 다크 (완전 검은색 지양) */
+    --text-light: #64748B;       /* 슬레이트 그레이 */
+    --bg-light: #F8FAFC;         /* 아주 밝은 쿨그레이 바탕 */
+    --bg-card: #FFFFFF;
+    --border-color: #E2E8F0;     /* 은은한 테두리 */
+    --white: #ffffff;
+    
+    /* Funnel Colors */
+    --funnel-1: #06B6D4; /* Cyan */
+    --funnel-2: #3B82F6; /* Blue */
+    --funnel-3: #6366F1; /* Indigo */
+    --funnel-4: #8B5CF6; /* Violet */
+    --funnel-5: #A855F7; /* Purple */
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Paperlogy', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: transparent; /* 배경과 분리감 부여 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: var(--white);
+    color: var(--text-dark);
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+    color: var(--text-dark);
+}
+
+.header-content p {
+    font-size: 15px;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.header-controls {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.checkbox-label:hover {
+    background-color: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+.checkbox-label input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Main Content */
+.report-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* 섹션 간격을 Grid gap 스타일로 깔끔하게 처리 */
+}
+
+.section {
+    background-color: var(--bg-card);
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 24px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Score Summary */
+.score-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.funnel-score-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 상단에 얇은 컬러 라인으로 포인트 주기 */
+.funnel-score-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.funnel-score-card:nth-child(1)::before { background-color: var(--funnel-1); }
+.funnel-score-card:nth-child(2)::before { background-color: var(--funnel-2); }
+.funnel-score-card:nth-child(3)::before { background-color: var(--funnel-3); }
+.funnel-score-card:nth-child(4)::before { background-color: var(--funnel-4); }
+.funnel-score-card:nth-child(5)::before { background-color: var(--funnel-5); }
+
+.funnel-score-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: transparent;
+}
+
+.funnel-score-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.score-value {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 8px 0;
+    letter-spacing: -1px;
+}
+
+.score-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--bg-light);
+    border: 1px dashed var(--border-color); /* 모던한 차트 영역 느낌 */
+}
+
+canvas {
+    max-height: 100%;
+}
+
+/* Issue Popup */
+.issue-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 32px;
+    max-width: 500px;
+    width: 90%;
+    z-index: 1000;
+    border: 1px solid var(--border-color);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--bg-light);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    background-color: #F1F5F9;
+    color: var(--text-dark);
+}
+
+#issueContent {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+/* Minimalist Tables */
+.funnel-table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0 0 0;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.funnel-table, .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+}
+
+.funnel-table thead, .comparison-table thead {
+    background-color: var(--bg-light);
+}
+
+.funnel-table th, .comparison-table th {
+    padding: 16px 20px;
+    font-weight: 600;
+    color: var(--text-light);
+    border-bottom: 2px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.funnel-table td, .comparison-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.funnel-table tbody tr:last-child td, 
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.funnel-table tbody tr:hover, 
+.comparison-table tbody tr:hover {
+    background-color: #F8FAFC;
+}
+
+/* Keyword Clouds */
+.keyword-clouds {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.keyword-cloud-item {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+}
+
+.keyword-cloud-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+.keyword-cloud-item canvas {
+    width: 100% !important;
+    height: 250px !important;
+}
+
+/* Insights Container */
+.insights-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.insight-item {
+    background-color: #EEF2FF; /* 은은한 인디고 배경 */
+    border-radius: 12px;
+    padding: 24px;
+    line-height: 1.7;
+    color: var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.insight-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Action Plan */
+.action-plan-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.action-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--secondary-color);
+}
+
+.action-item h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.action-item p {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+.action-item ul {
+    margin-left: 24px;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.action-item li {
+    margin-bottom: 8px;
+    padding-left: 4px;
+}
+
+.action-item li::marker {
+    color: var(--secondary-color);
+}
+
+/* Creative Analysis */
+.creative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.creative-card {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    background-color: var(--bg-card);
+    transition: all 0.2s ease;
+}
+
+.creative-card:hover {
+    border-color: #CBD5E1;
+    box-shadow: var(--shadow-sm);
+}
+
+.creative-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.creative-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+.creative-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: #EFF6FF;
+    color: var(--accent-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* Campaign Analysis */
+.campaign-chart-container {
+    position: relative;
+    height: 300px;
+    margin: 20px 0;
+    background-color: var(--bg-light);
+    border-radius: 12px;
+    border: 1px dashed var(--border-color);
+    padding: 20px;
+}
+
+.campaign-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+}
+
+.metric-card {
+    background: var(--text-dark); /* 세련된 블랙 포인트 */
+    color: var(--white);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: var(--shadow-md);
+}
+
+.metric-card h4 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #94A3B8;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-card .value {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.metric-card .unit {
+    font-size: 14px;
+    font-weight: 400;
+    color: #CBD5E1;
+    margin-left: 4px;
+}
+
+/* Competitor Comparison */
+.score-higher {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.score-lower {
+    color: var(--warning-color);
+    font-weight: 700;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 60px 40px;
+    color: var(--text-light);
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: transparent;
+    color: var(--text-light);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 13px;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 24px;
+        position: static;
+    }
+
+    .header-controls {
+        width: 100%;
+    }
+    
+    .checkbox-label {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .report-content {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .section {
+        padding: 24px;
+    }
+
+    .score-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .chart-container, .campaign-chart-container {
+        height: 250px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 24px;
+    }
+
+    .score-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .score-value {
+        font-size: 36px;
+    }
+
+    .funnel-table th,
+    .funnel-table td,
+    .comparison-table th,
+    .comparison-table td {
+        padding: 12px 10px;
+    }
+
+    .metric-card .value {
+        font-size: 28px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    .header {
+        position: static;
+        border-bottom: 2px solid black;
+        padding: 20px 0;
+    }
+    
+    .header-controls {
+        display: none;
+    }
+
+    .report-content {
+        padding: 0;
+        gap: 20px;
+    }
+
+    .section {
+        page-break-inside: avoid;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .funnel-score-card, .metric-card, .action-item {
+        border: 1px solid #ccc;
+        box-shadow: none;
+        color: black !important;
+    }
+    
+    .metric-card {
+        background: white !important;
+    }
+    
+    .metric-card h4, .metric-card .unit {
+        color: #666 !important;
+    }
+}
