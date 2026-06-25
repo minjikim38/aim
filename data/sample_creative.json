@@ -1,0 +1,13 @@
+{
+  "creatives": [
+    { "id": "CRV_001", "name": "봄 신제품 런칭 배너", "type": "banner", "month": "2024-03", "keywords_included": ["브랜드A 신제품", "브랜드A"], "funnel_target": "인지", "impressions": 1800000, "clicks": 45000, "ctr": 2.50 },
+    { "id": "CRV_002", "name": "신제품 언박싱 영상", "type": "video", "month": "2024-03", "keywords_included": ["브랜드A 리뷰", "브랜드A 사용기"], "funnel_target": "탐색", "impressions": 920000, "clicks": 38000, "ctr": 4.13 },
+    { "id": "CRV_003", "name": "봄 프로모션 할인 배너", "type": "banner", "month": "2024-03", "keywords_included": ["브랜드A 가격", "브랜드A 할인"], "funnel_target": "의도", "impressions": 650000, "clicks": 29000, "ctr": 4.46 },
+    { "id": "CRV_004", "name": "인플루언서 후기 콘텐츠", "type": "image", "month": "2024-03", "keywords_included": ["브랜드A 후기", "브랜드A 인증"], "funnel_target": "확산", "impressions": 420000, "clicks": 18200, "ctr": 4.33 },
+    { "id": "CRV_005", "name": "블프 메인 배너", "type": "banner", "month": "2024-11", "keywords_included": ["브랜드A 블랙프라이데이", "브랜드A 할인", "브랜드A 구매"], "funnel_target": "의도", "impressions": 2100000, "clicks": 91000, "ctr": 4.33 },
+    { "id": "CRV_006", "name": "블프 바이럴 영상", "type": "video", "month": "2024-11", "keywords_included": ["브랜드A 인증샷", "브랜드A 후기"], "funnel_target": "확산", "impressions": 1500000, "clicks": 72000, "ctr": 4.80 },
+    { "id": "CRV_007", "name": "연말 선물 배너", "type": "banner", "month": "2024-12", "keywords_included": ["브랜드A 선물", "브랜드A"], "funnel_target": "인지", "impressions": 1200000, "clicks": 48000, "ctr": 4.00 },
+    { "id": "CRV_008", "name": "가을 신상 이미지 광고", "type": "image", "month": "2024-09", "keywords_included": ["브랜드A 가을신상", "브랜드A"], "funnel_target": "인지", "impressions": 980000, "clicks": 32000, "ctr": 3.27 },
+    { "id": "CRV_009", "name": "여름 특가 배너", "type": "banner", "month": "2024-07", "keywords_included": ["브랜드A 가격"], "funnel_target": "의도", "impressions": 480000, "clicks": 16000, "ctr": 3.33 }
+  ]
+}

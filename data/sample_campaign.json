@@ -1,0 +1,16 @@
+{
+  "campaigns": [
+    { "month": "2024-01", "type": "performance", "impressions": 1200000, "clicks": 45000, "ctr": 3.75, "conversions": 1200, "cvr": 2.67, "spend": 12000000, "revenue": 45600000, "roas": 380 },
+    { "month": "2024-02", "type": "performance", "impressions": 1350000, "clicks": 51000, "ctr": 3.78, "conversions": 1380, "cvr": 2.71, "spend": 13500000, "revenue": 53820000, "roas": 399 },
+    { "month": "2024-03", "type": "awareness", "impressions": 4500000, "clicks": 112000, "ctr": 2.49, "conversions": 2100, "cvr": 1.88, "spend": 28000000, "revenue": 84000000, "roas": 300 },
+    { "month": "2024-04", "type": "performance", "impressions": 1580000, "clicks": 62000, "ctr": 3.92, "conversions": 1650, "cvr": 2.66, "spend": 15800000, "revenue": 64350000, "roas": 407 },
+    { "month": "2024-05", "type": "performance", "impressions": 1520000, "clicks": 59000, "ctr": 3.88, "conversions": 1580, "cvr": 2.68, "spend": 15200000, "revenue": 61620000, "roas": 405 },
+    { "month": "2024-06", "type": "performance", "impressions": 1180000, "clicks": 43000, "ctr": 3.64, "conversions": 1100, "cvr": 2.56, "spend": 11800000, "revenue": 41800000, "roas": 354 },
+    { "month": "2024-07", "type": "performance", "impressions": 1050000, "clicks": 38000, "ctr": 3.62, "conversions": 980, "cvr": 2.58, "spend": 10500000, "revenue": 37240000, "roas": 355 },
+    { "month": "2024-08", "type": "performance", "impressions": 1230000, "clicks": 46000, "ctr": 3.74, "conversions": 1220, "cvr": 2.65, "spend": 12300000, "revenue": 47580000, "roas": 387 },
+    { "month": "2024-09", "type": "awareness", "impressions": 3200000, "clicks": 89000, "ctr": 2.78, "conversions": 1890, "cvr": 2.12, "spend": 22000000, "revenue": 75600000, "roas": 344 },
+    { "month": "2024-10", "type": "performance", "impressions": 2100000, "clicks": 84000, "ctr": 4.00, "conversions": 2350, "cvr": 2.80, "spend": 21000000, "revenue": 91650000, "roas": 436 },
+    { "month": "2024-11", "type": "performance", "impressions": 3800000, "clicks": 165000, "ctr": 4.34, "conversions": 5200, "cvr": 3.15, "spend": 38000000, "revenue": 218400000, "roas": 575 },
+    { "month": "2024-12", "type": "performance", "impressions": 2900000, "clicks": 118000, "ctr": 4.07, "conversions": 3600, "cvr": 3.05, "spend": 29000000, "revenue": 133200000, "roas": 459 }
+  ]
+}
